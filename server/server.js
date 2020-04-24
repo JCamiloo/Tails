@@ -13,6 +13,10 @@ app.use(express.static(publicPath));
 
 const io = socketIO(server);
 
+io.on('connection', (client) => {
+  console.log('User connected');
+});
+
 server.listen(port, (err) => {
     if (err) throw new Error(err);
     console.log(`Server running on ${ port }`);
