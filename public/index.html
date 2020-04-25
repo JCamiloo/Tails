@@ -19,6 +19,8 @@
     socket.on('disconnect', function() {
       console.log('Lost connection');
     });
+
+    socket.emit('sendMessage', { user: 'Juan', message: 'Hello World' });
   </script>
 </body>
 
