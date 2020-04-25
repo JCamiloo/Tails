@@ -11,19 +11,8 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
-const io = socketIO(server);
-
-io.on('connection', (client) => {
-  console.log('User connected');
-
-  client.on('disconnect', () => {
-    console.log('User disconnected')
-  });
-
-  client.on('sendMessage', (message) => {
-    console.log(message);
-  });
-});
+module.exports.io = socketIO(server);
+require('./sockets/socket');
 
 server.listen(port, (err) => {
     if (err) throw new Error(err);
