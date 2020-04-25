@@ -8,11 +8,12 @@ io.on('connection', (client) => {
     console.log('User disconnected')
   });
 
-  client.on('sendMessage', (message, callback) => {
-    if (message.user) {
-      callback('Success');
-    } else {
-      callback('Fail');
-    }
+  client.on('sendMessage', (data, callback) => {
+    client.broadcast.emit('sendMessage', data);
+    // if (data.user) {
+    //   callback('Success');
+    // } else {
+    //   callback('Fail');
+    // }
   });
 });
