@@ -5,13 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Programa de Colas</title>
+  <title>Tails</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body>
-  <h1>Programa de Colas</h1>
-  <script src="socket.io/socket.io.js"></script>
-  <script src="custom-socket.js"></script>
-</body>
+<body class="container">
+  <h1>Tails</h1>
 
+  <div class="row">
+    <div class="col-6">
+      <a class="btn btn-primary" href="public.html">Info Screen</a>
+      <a class="btn btn-secondary" href="new-ticket.html">Create Ticket</a>
+    </div>
+
+    <div class="col-6">
+      <form action="desktop.html">
+        <input name="desktop" type="number" class="form-control" placeholder="Escritorio" autofocus required>
+        <br>
+        <button type="submit" class="btn btn-primary">
+          Enter
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
 </html>
