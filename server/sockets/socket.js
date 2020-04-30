@@ -1,4 +1,6 @@
 const { io } = require('../server');
+const { Ticket } = require('../classes/ticket')
+const ticket = new Ticket();
 
 io.on('connection', (client) => {
   console.log('User connected');
