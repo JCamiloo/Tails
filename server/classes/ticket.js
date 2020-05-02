@@ -20,6 +20,10 @@ class Ticket {
     return this.last;
   }
 
+  current() {
+    return this.last;
+  }
+
   resetCount() {
     this.last = 0;
     this.saveFile();

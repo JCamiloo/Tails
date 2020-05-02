@@ -5,6 +5,10 @@ socket.on('connect', function() {
   console.log('connected');
 });
 
+socket.on('currentTicket', function(ticket){
+  label.text(ticket.current);
+});
+
 socket.on('disconnect', function() {
   console.log('disconnected');
 });

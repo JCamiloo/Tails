@@ -8,4 +8,6 @@ io.on('connection', (client) => {
     const next = ticket.next();
     callback(next);
   });
+
+  client.emit('currentTicket', { currentTicket: ticket.current() });
 });
