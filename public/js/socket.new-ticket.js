@@ -6,7 +6,7 @@ socket.on('connect', function() {
 });
 
 socket.on('currentTicket', function(ticket){
-  label.text(ticket.current);
+  label.text(`Ticket ${ticket.currentTicket}`);
 });
 
 socket.on('disconnect', function() {

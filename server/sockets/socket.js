@@ -1,6 +1,6 @@
 const { io } = require('../server');
-const { Ticket } = require('../classes/ticket')
-const ticket = new Ticket();
+const { TicketControl } = require('../classes/ticket-control')
+const ticket = new TicketControl();
 
 io.on('connection', (client) => {
 
