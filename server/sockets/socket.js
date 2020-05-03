@@ -10,4 +10,15 @@ io.on('connection', (client) => {
   });
 
   client.emit('currentTicket', { currentTicket: ticket.current() });
+
+  client.on('attendTicket', (data, callback) => {
+    if (!data.desktop) {
+      return callback({
+        error: true,
+        message: 'Desktop code is mandatory'
+      });
+    }
+    const attendTicket = ticket.attendTicket(data.desktop);
+    callback(attendTicket);
+  });
 });
