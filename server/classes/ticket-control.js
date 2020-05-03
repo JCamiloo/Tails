@@ -51,8 +51,12 @@ class TicketControl {
     return attendTicket;
   }
 
-  current() {
+  getCurrentTicket() {
     return this.last;
+  }
+
+  getLastFourTickets() {
+    return this.lastFourTickets;
   }
 
   resetCount() {

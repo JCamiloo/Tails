@@ -9,7 +9,10 @@ io.on('connection', (client) => {
     callback(next);
   });
 
-  client.emit('currentTicket', { currentTicket: ticket.current() });
+  client.emit('currentTicket', { 
+    currentTicket: ticket.getCurrentTicket(),
+    lastFourTickets: ticket.getLastFourTickets()
+  });
 
   client.on('attendTicket', (data, callback) => {
     if (!data.desktop) {
@@ -20,5 +23,6 @@ io.on('connection', (client) => {
     }
     const attendTicket = ticket.attendTicket(data.desktop);
     callback(attendTicket);
+    client.broadcast.emit('lastFourTickets', { lastFourTickets: ticket.getLastFourTickets() });
   });
 });
